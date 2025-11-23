@@ -1,0 +1,9 @@
+node_modules
+dist
+.env
+.git
+.gitignore
+*.md
+pnpm-debug.log
+.DS_Store
+.next
