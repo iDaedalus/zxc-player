@@ -21,8 +21,10 @@ COPY . .
 # Build TypeScript
 RUN pnpm run build
 
-# Install Playwright Chromium (already have deps from base image)
-RUN pnpm exec playwright install chromium --with-deps
+# CRITICAL: Install Playwright browsers AFTER building
+# Use npx instead of pnpm exec for better compatibility
+RUN npx playwright install chromium
+RUN npx playwright install-deps chromium
 
 # Expose port
 EXPOSE 3000
@@ -32,7 +34,3 @@ ENV NODE_ENV=production
 
 # Start the service
 CMD ["pnpm", "start"]
-```
-
-### 1.10 Create `.dockerignore`
-```
