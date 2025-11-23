@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@p-stream/providers": "github:p-stream/providers#production",
     "next": "16.0.3",
+    "playwright": "^1.56.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
